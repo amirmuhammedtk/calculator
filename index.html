@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .calculator{
+        width: 350px;
+        margin: 100px 480px;
+        border-radius: 20px;
+        background-color: rgba(68, 49, 65, 0.101);
+    }
+    input{
+        border: none;
+        height: 200px;
+        width: 340px;
+        text-align: right;
+        background-color:rgb(231, 228, 228);
+        font-size: 40px;
+        font-weight: 600;
+        font-family: cursive;
+        border-radius: 20px;
+    }
+    .buttons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    button{
+        padding: 20px;
+        height: 70px;
+        width: 70px;
+        margin: 5px;
+        border-radius: 20px;
+        box-shadow: 0 0 2px gray;
+        background-color: white;
+        border: none;
+        font-size: 24px;
+        font-weight: 800;
+    }
+    .clr{
+        background-color: rgba(255, 0, 0, 0.905);
+        color: white;
+    }
+</style>
+<body>
+    <div class="calculator">
+        <input type="text" id="result">
+        <div class="buttons">
+            <button onclick="clearData()" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">AC</button>
+            <button onclick="addData('%')" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">%</button>
+            <button onclick="backData()" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">🔙</button>
+            <button onclick="addData('/')" class="clr"onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">/</button>
+            <button onclick="addData('1')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">1</button>
+            <button onclick="addData('2')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">2</button>
+            <button onclick="addData('3')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">3</button>
+            <button onclick="addData('*')" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">*</button>
+            <button onclick="addData('4')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">4</button>
+            <button onclick="addData('5')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">5</button>
+            <button onclick="addData('6')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">6</button>
+            <button onclick="addData('-')" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">-</button>
+            <button onclick="addData('7')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">7</button>
+            <button onclick="addData('8')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">8</button>
+            <button onclick="addData('9')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">9</button>
+            <button onclick="addData('+')" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">+</button>
+            <button onclick="addData('00')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">00</button>
+            <button onclick="addData('0')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">0</button>
+            <button onclick="addData('.')" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">.</button>
+            <button onclick="equalTO()" class="clr" onmouseenter="colorchange(this)" onmouseleave="colorReset(this)">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    const addData=(a)=>{
+        result.value+=a
+    }
+    const clearData=()=>{
+        result.value=""
+    }
+    const equalTO=()=>{
+        result.value=eval(result.value)
+    }
+    const backData=()=>{
+        result.value = result.value.slice(0, -1);
+    }
+   function colorchange(button){
+    button.style.color='blue'
+   }
+   
+   function colorReset(button){
+    button.style.color='black'
+   }
+    
+</script>
+</html>
